@@ -1,0 +1,35 @@
+POST http://localhost:9080/internal/addProduct
+Content-Type: application/json
+
+{
+    "productId": "1",
+    "category": "Electronics",
+    "brand": "Apple"
+}
+
+###
+POST http://localhost:9080/internal/addProduct
+Content-Type: application/json
+
+{
+  "productId": "2",
+  "category": "Babies",
+  "brand": "Babyom"
+}
+
+###
+POST http://localhost:9080/internal/addToShelf
+Content-Type: application/json
+
+{
+  "shopperId": "S-1000",
+  "shelf": [
+    {
+      "productId": "1",
+      "relevancyScore": 31.089209569320897
+    }
+  ]
+}
+
+###
+GET http://localhost:9080/external/getProducts?shopperId=S-1000&limit=1
